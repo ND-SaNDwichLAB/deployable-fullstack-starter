@@ -6,15 +6,15 @@ Designed for teaching beginners on cloud deployment.
 - Minimal Flask backend (served by Gunicorn, HTTP)
 - Minimal docker-compose for fullstack deployment
 
-The app is currently deployed on the GCP VM named `deployable-starter`, accessed via the domain `http://mystarter.nztang.com` or `http://136.116.220.221` (the VM may be shut down at any time). 
+The app is currently deployed on the GCP VM named `deployable-starter`, accessed via the domain http://mystarter.nztang.com or http://136.116.220.221 (the VM may be shut down at any time). 
 
 ## Important Files
 
 - `frontend/Dockerfile`: Builds the Vite app using Node, then serves the static files using `nginx:alpine`.
 - `backend/Dockerfile`: Runs the Flask API in production using `gunicorn` inside a lightweight Python image `python:3.12-slim`.
 - `docker-compose.yml`: Defines and runs both containers:
-    * Frontend container on port **80** (nginx serving the built Vite app)
-    * Backend container on port **5001** (Gunicorn serving Flask)
+    * Frontend container on port 80 (nginx serving the built Vite app)
+    * Backend container on port 5001 (Gunicorn serving Flask)
 
 ## Getting Started
 
@@ -45,7 +45,7 @@ If you own a domain (e.g., `nztang.com`), you can use it instead of the raw VM I
 - Type: `A`
 - Value: your VM's external IP (e.g., `136.116.220.221`)
 
-After DNS updates, your app is accessible at: `http://mystarter.nztang.com`. No other changes are needed.
+After DNS updates, your app is accessible at: http://mystarter.nztang.com. No other changes are needed.
 
 ## Next Steps
 
