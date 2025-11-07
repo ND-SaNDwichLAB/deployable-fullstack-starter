@@ -6,6 +6,8 @@ Designed for teaching beginners on cloud deployment.
 - Minimal Flask backend (served by Gunicorn, HTTP)
 - Minimal docker-compose for fullstack deployment
 
+The app is currently deployed on the GCP VM named `deployable-starter`, accessed via the domain `http://mystarter.nztang.com` or `http://136.116.220.221` (the VM may be shut down at any time). 
+
 ## Important Files
 
 - `frontend/Dockerfile`: Builds the Vite app using Node, then serves the static files using `nginx:alpine`.
@@ -27,7 +29,7 @@ These steps work on any clean Linux VM (e.g., GCP, AWS).
     - In the project directory, run `docker-compose up --build -d`
     - Run `docker ps`, and you should see the frontend and backend containers running on ports 80 and 5001, respectively.
 5. Visit the app in your browser at `http://<your-vm-external-ip>` (e.g., http://136.116.220.221).
-    - Click the "Call Backend" button, and you should see: "Backend says: pong."
+    - Click the "Call Backend: ping" button, and you should see: "Backend Says: pong."
 
 ### (Optional) Using Sensitive Environment Variables (e.g., OpenAI API Key)
 
@@ -38,12 +40,12 @@ These steps work on any clean Linux VM (e.g., GCP, AWS).
 
 ### (Optional) Using a Custom Domain
 
-If you own a domain (e.g., `toby.li`), you can use it instead of the raw VM IP. You simply need to create an **A record** in your domain provider (e.g., Cloudflare, Namecheap):
+If you own a domain (e.g., `nztang.com`), you can use it instead of the raw VM IP. You simply need to create an **A record** in your domain provider (e.g., Cloudflare, Namecheap):
 - Name: `mystarter` (or any subdomain)
 - Type: `A`
 - Value: your VM's external IP (e.g., `136.116.220.221`)
 
-After DNS updates, your app is accessible at: `http://mystarter.toby.li`. No other changes are needed.
+After DNS updates, your app is accessible at: `http://mystarter.nztang.com`. No other changes are needed.
 
 ## Next Steps
 

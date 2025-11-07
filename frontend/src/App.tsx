@@ -10,16 +10,16 @@ function App() {
   };
 
   return (
-    <div style={{ padding: 40, fontFamily: "sans-serif" }}>
+    <div>
       <h1>Deployable Fullstack Starter</h1>
 
       <button onClick={callBackend}>
-        Call Backend
+        Call Backend: <strong>ping</strong>
       </button>
 
       {message && (
-        <p style={{ marginTop: 20 }}>
-          Server says: <strong>{message}</strong>
+        <p >
+          Server Says: <strong>{message}</strong>
         </p>
       )}
     </div>
